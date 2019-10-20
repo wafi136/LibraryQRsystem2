@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "638442025516",
+    "firebase_url": "https://libraryqrsystem.firebaseio.com",
+    "project_id": "libraryqrsystem",
+    "storage_bucket": "libraryqrsystem.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638442025516:android:32f1a5320c57686a275789",
+        "android_client_info": {
+          "package_name": "com.example.libraryqrsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "638442025516-7db8blp32gsvj5vr1gc31d1mun1toets.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAvU6q1x4DGIj8TeZ9hcbcJ5palIciUco"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "638442025516-7db8blp32gsvj5vr1gc31d1mun1toets.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
