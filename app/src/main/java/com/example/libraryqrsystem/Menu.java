@@ -40,11 +40,12 @@ public class Menu extends AppCompatActivity {
                     public void onMenuSelected(int Visit) {
                         switch (Visit) {
                             case 0:
-                               Intent intent = new Intent(Menu.this,Login.class);
+                                Toast.makeText(Menu.this,"Click this "+ arrayIcon[Visit],Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(Menu.this,Login.class);
                                startActivity(intent);
                                 break;
                             case 1:
-                                Intent intent2 = new Intent(Menu.this,ConfirmDetail.class);
+                                Intent intent2 = new Intent(Menu.this,Register.class);
                                 startActivity(intent2);
                                 break;
 
