@@ -48,6 +48,7 @@ public class Menu extends AppCompatActivity {
                                 startActivity(intent2);
                                 break;
 
+
                             default:
                                 Toast.makeText(Menu.this, "Notihing", Toast.LENGTH_SHORT).show();
                         }}
