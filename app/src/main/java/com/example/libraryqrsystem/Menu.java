@@ -48,7 +48,10 @@ public class Menu extends AppCompatActivity {
                                 Intent intent2 = new Intent(Menu.this,Register.class);
                                 startActivity(intent2);
                                 break;
-
+                            case 2:
+                                Intent intent3 = new Intent(Menu.this,BookScan.class);
+                                startActivity(intent3);
+                                break;
 
                             default:
                                 Toast.makeText(Menu.this, "Notihing", Toast.LENGTH_SHORT).show();

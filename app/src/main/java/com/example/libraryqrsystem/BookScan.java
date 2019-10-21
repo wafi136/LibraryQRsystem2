@@ -104,7 +104,7 @@ public class BookScan extends AppCompatActivity {
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(QRScanActivity.this,"Ida mau"+e.getMessage(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(BookScan.this,"Ida mau"+e.getMessage(),Toast.LENGTH_SHORT).show();
                         }
                     });
         }
