@@ -5,20 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Register">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/Bckgrnd"
+        android:src="@drawable/bookshelf"
+        android:scaleType="centerCrop"
+        android:alpha=".3"
+        />
     <Button
         android:id="@+id/btnReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-
         android:text="Register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
+        app:layout_constraintVertical_bias="0.601" />
 
     <EditText
         android:id="@+id/txtEmail"
@@ -75,9 +82,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
 
-        android:ems="12"
-        android:inputType="textPersonName"
-        android:text="Register2"
+        android:textSize="30sp"
+        android:text="Register"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

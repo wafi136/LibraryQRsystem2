@@ -3,6 +3,7 @@ package com.example.libraryqrsystem;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,6 +39,7 @@ public class DataToBeSend extends AppCompatDialogFragment {
                         String username = editTextUsername.getText().toString();
                         String password = editTextPsd.getText().toString();
                         listener.applyTexts(username,password);
+
                     }
                 });
         editTextUsername = view.findViewById(R.id.field_Username);

@@ -35,7 +35,7 @@ import com.otaliastudios.cameraview.frame.FrameProcessor;
 
 import java.util.List;
 
-public class BookScan extends AppCompatActivity {
+public class BookScan extends AppCompatActivity implements DataToBeSend.DisplayData{  // implements DataToBeSend.DisplayData
 
     CameraView cameraView;
     boolean isDetected = false;
@@ -51,7 +51,7 @@ public class BookScan extends AppCompatActivity {
         setContentView(R.layout.activity_book_scan);
 
         Dexter.withActivity(this)
-                .withPermissions(new String[]{Manifest.permission.CAMERA ,Manifest.permission.RECORD_AUDIO})
+                .withPermissions(Manifest.permission.CAMERA,Manifest.permission.RECORD_AUDIO)
                 .withListener(new MultiplePermissionsListener() {
                     @Override
                     public void onPermissionsChecked(MultiplePermissionsReport report) {
@@ -178,6 +178,11 @@ public class BookScan extends AppCompatActivity {
 
 
 
+
+    }
+
+    @Override
+    public void applyTexts(String username, String password) {
 
     }
 }

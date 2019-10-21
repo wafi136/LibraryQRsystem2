@@ -40,8 +40,8 @@ public class Login extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
                 if (mFirebaseUser != null) {
-                    Toast.makeText(Login.this, "u logged dh ni", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(Login.this, MainActivity.class);
+                    Toast.makeText(Login.this, "You already log in", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(Login.this, Logout.class);
                     startActivity(i);
                 } else {
                     Toast.makeText(Login.this, "please log", Toast.LENGTH_SHORT).show();
@@ -55,29 +55,23 @@ public class Login extends AppCompatActivity {
                 String email = UserEmail.getText().toString();
                 String pwd = password.getText().toString();
                 if (email.isEmpty()) {
-                    UserEmail.setError("Masuk kan email");
+                    UserEmail.setError("Enter email");
                     UserEmail.requestFocus();
                 } else if (pwd.isEmpty()) {
-                    password.setError("Masukan paswod");
+                    password.setError("Enter password");
                     password.requestFocus();
-                } else if (email.isEmpty() && pwd.isEmpty()) {
-                    Toast.makeText(Login.this, "Kosong field", Toast.LENGTH_SHORT).show();
-
-                } else if (!(email.isEmpty() && pwd.isEmpty())) {
+                } else {
                     mFirebaseAuth.signInWithEmailAndPassword(email, pwd).addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (!task.isSuccessful()) {
-                                Toast.makeText(Login.this, "Login salah", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Login.this, "Login Incorrect", Toast.LENGTH_SHORT).show();
                             } else {
-                                Intent intToMenu = new Intent(Login.this, MainActivity.class);
+                                Intent intToMenu = new Intent(Login.this, Logout.class);
                                 startActivity(intToMenu);
                             }
                         }
                     });
-
-                } else {
-                    Toast.makeText(Login.this, "SignUp ada error", Toast.LENGTH_SHORT).show();
 
                 }
             }

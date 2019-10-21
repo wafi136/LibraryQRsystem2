@@ -40,13 +40,13 @@ public class Register extends AppCompatActivity {
                 String Email = UserEmail.getText().toString();
                 String Psd = Password.getText().toString();
                 if (Email.isEmpty()) {
-                    UserEmail.setError("Please Masukan Email");
+                    UserEmail.setError("Please enter your Email");
                     UserEmail.requestFocus();
                 } else if (Psd.isEmpty()) {
-                    Password.setError("Please Masukkan Psd");
+                    Password.setError("Please enter your password");
                     Password.requestFocus();
                 } else if (Email.isEmpty() && Psd.isEmpty()) {
-                    Toast.makeText(Register.this, "Field Kosong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Register.this, "Field empty", Toast.LENGTH_SHORT).show();
                 } else if (!(Email.isEmpty() && Psd.isEmpty())) {
                     mFirebaseAuth.createUserWithEmailAndPassword(Email, Psd).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
                         @Override

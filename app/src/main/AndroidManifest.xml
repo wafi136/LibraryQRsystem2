@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.libraryqrsystem">
-
-    <!--For QR scan function-->
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <!-- For QR scan function -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -14,18 +13,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
             android:value="barcode" />
-
-        <activity android:name=".BookScan"></activity>
+        <activity android:name=".Menu"></activity>
+        <activity android:name=".BookScan" />
         <activity android:name=".About" />
-        <activity android:name=".ConfirmDetail" />
+        <activity android:name=".frbsDemo" />
         <activity android:name=".Register" />
         <activity android:name=".Logout" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".Menu">
+        <activity android:name=".ConfirmDetail"> <!--First page-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

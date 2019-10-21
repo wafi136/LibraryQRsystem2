@@ -1,34 +1,71 @@
 {
   "project_info": {
-    "project_number": "638442025516",
-    "firebase_url": "https://libraryqrsystem.firebaseio.com",
-    "project_id": "libraryqrsystem",
-    "storage_bucket": "libraryqrsystem.appspot.com"
+    "project_number": "879731202036",
+    "firebase_url": "https://loginqr2.firebaseio.com",
+    "project_id": "loginqr2",
+    "storage_bucket": "loginqr2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:638442025516:android:131ff7b1b2e17cc1275789",
+        "mobilesdk_app_id": "1:879731202036:android:eebcbbe714d25adefa4ba1",
         "android_client_info": {
-          "package_name": "com.example.libraryqrsystem"
+          "package_name": "com.example.barcodegenerator3"
         }
       },
       "oauth_client": [
         {
-          "client_id": "638442025516-7db8blp32gsvj5vr1gc31d1mun1toets.apps.googleusercontent.com",
+          "client_id": "879731202036-mmfi1142vfck28qgqles3ppuisekjnl1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.barcodegenerator3",
+            "certificate_hash": "49e6d3e1f23e81a587f373b9a4169ccbe7f9b831"
+          }
+        },
+        {
+          "client_id": "879731202036-po2qdoclku5s233v2u7k73ad0bqp60m8.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBAvU6q1x4DGIj8TeZ9hcbcJ5palIciUco"
+          "current_key": "AIzaSyDc7gyGwgwBTHZ4dAKtucTNs8NARcKvVm8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "638442025516-7db8blp32gsvj5vr1gc31d1mun1toets.apps.googleusercontent.com",
+              "client_id": "879731202036-po2qdoclku5s233v2u7k73ad0bqp60m8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879731202036:android:5fa88e86397b364cfa4ba1",
+        "android_client_info": {
+          "package_name": "com.example.libraryqrsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879731202036-po2qdoclku5s233v2u7k73ad0bqp60m8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc7gyGwgwBTHZ4dAKtucTNs8NARcKvVm8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879731202036-po2qdoclku5s233v2u7k73ad0bqp60m8.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

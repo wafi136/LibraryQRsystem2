@@ -17,7 +17,7 @@ import com.hitomi.cmlibrary.OnMenuStatusChangeListener;
 public class Menu extends AppCompatActivity {
 
      String arrayIcon[]  =
-            {"Bleach","Facebook", "Whatsapp"};
+                {"Login","Register", "About"};
 
 
 
@@ -27,13 +27,13 @@ public class Menu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         CircleMenu circleMenu = findViewById(R.id.circle_menu);
 
-//#RRGGBB
+
 
         circleMenu.setMainMenu(Color.parseColor("#D3D3D3"),R.drawable.ic_add,R.drawable.ic_clear)
                 .addSubMenu(Color.parseColor("#ffffff"),R.drawable.bleach)
                 .addSubMenu(Color.parseColor("#4169E1"),R.drawable.facebook_icons8)
                 .addSubMenu(Color.parseColor("#32CD32"),R.drawable.whatsapp_icons8)
-               // .addSubMenu(Color.parseColor("#ffffff"),R.drawable.facebook200) .addSubMenu(Color.parseColor("#ffffff"),R.drawable.googleplus) .addSubMenu(Color.parseColor("#FF0000"),R.drawable.youtube192)
+
 
                 .setOnMenuSelectedListener(new OnMenuSelectedListener() {
                     @Override
@@ -45,10 +45,12 @@ public class Menu extends AppCompatActivity {
                                startActivity(intent);
                                 break;
                             case 1:
+                                Toast.makeText(Menu.this,"Click this "+ arrayIcon[Visit],Toast.LENGTH_SHORT).show();
                                 Intent intent2 = new Intent(Menu.this,Register.class);
                                 startActivity(intent2);
                                 break;
                             case 2:
+                                Toast.makeText(Menu.this,"Click this "+ arrayIcon[Visit],Toast.LENGTH_SHORT).show();
                                 Intent intent3 = new Intent(Menu.this,BookScan.class);
                                 startActivity(intent3);
                                 break;

@@ -24,8 +24,9 @@ public class Logout extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                Intent Logout = new Intent(Logout.this,Register.class);
+                Intent Logout = new Intent(Logout.this,Menu.class);
                 startActivity(Logout);
+
             }
         });
     }
