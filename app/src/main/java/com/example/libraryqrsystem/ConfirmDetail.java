@@ -2,6 +2,7 @@ package com.example.libraryqrsystem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -41,6 +42,9 @@ public class ConfirmDetail extends AppCompatActivity implements DataToBeSend.Dis
             @Override
             public void onClick(View v) {
                 openData();
+
+                Intent Kepage2 = new Intent(ConfirmDetail.this,ConfirmDetail2.class);
+                startActivity(Kepage2);
             }
         });
     }

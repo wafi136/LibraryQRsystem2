@@ -35,7 +35,7 @@ import com.otaliastudios.cameraview.frame.FrameProcessor;
 
 import java.util.List;
 
-public class BookScan extends AppCompatActivity {  // implements DataToBeSend.DisplayData
+public class BookScan extends AppCompatActivity implements DataToBeSend.DisplayData{  // implements DataToBeSend.DisplayData
 
     CameraView cameraView;
     boolean isDetected = false;
@@ -156,14 +156,12 @@ public class BookScan extends AppCompatActivity {  // implements DataToBeSend.Di
     private void createDialog(String text) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(text)
-                .setPositiveButton("ok My Men, Ada data", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Accept", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                         Intent intent = new Intent(BookScan.this,DialogLink.class);
                         startActivity(intent);
-
-
                     }
                 });
         AlertDialog dialog = builder.create();
@@ -186,4 +184,8 @@ public class BookScan extends AppCompatActivity {  // implements DataToBeSend.Di
     }
 
 
+    @Override
+    public void applyTexts(String username, String password) {
+
+    }
 }

@@ -12,14 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DialogLink"></activity>
+        <activity android:name=".ConfirmDetail2"></activity>
+        <activity android:name=".ConfirmDetail" />
+        <activity android:name=".DialogLink" />
 
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
             android:value="barcode" />
 
         <activity android:name=".Menu" />
-        <activity android:name=".ConfirmDetail" />
+        <activity android:name=".Dialog1" />
         <activity android:name=".About" />
         <activity android:name=".frbsDemo" />
         <activity android:name=".Register" />
