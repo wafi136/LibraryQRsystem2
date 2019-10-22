@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 
 public class DataToBeSend extends AppCompatDialogFragment {
     private EditText editTextUsername;
-    private  EditText editTextPsd;
+    private  EditText editTextBookDetail;
     private DisplayData listener;
 
     @Override
@@ -25,7 +25,7 @@ public class DataToBeSend extends AppCompatDialogFragment {
         View view = inflater.inflate(R.layout.layout_data_field,null);
 
         builder.setView(view)
-                .setTitle("lOGIN")
+                .setTitle("Detail")
                 .setNegativeButton("Cancel and Exit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
@@ -37,13 +37,14 @@ public class DataToBeSend extends AppCompatDialogFragment {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
                         String username = editTextUsername.getText().toString();
-                        String password = editTextPsd.getText().toString();
+                        String password = editTextBookDetail.getText().toString();
                         listener.applyTexts(username,password);
+
 
                     }
                 });
         editTextUsername = view.findViewById(R.id.field_Username);
-        editTextPsd = view.findViewById(R.id.field_bookDetail);
+        editTextBookDetail = view.findViewById(R.id.field_bookDetail);
         return builder.create();
     }
 

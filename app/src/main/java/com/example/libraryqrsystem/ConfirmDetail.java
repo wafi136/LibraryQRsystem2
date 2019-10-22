@@ -46,7 +46,7 @@ public class ConfirmDetail extends AppCompatActivity implements DataToBeSend.Dis
     }
     public void openData(){
         DataToBeSend exampleDialog = new DataToBeSend();
-        exampleDialog.show(getSupportFragmentManager(),"contoh dialog");
+        exampleDialog.show(getSupportFragmentManager(),"example dialog");
     }
 
 
