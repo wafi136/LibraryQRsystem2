@@ -159,7 +159,8 @@ public class BookScan extends AppCompatActivity implements DataToBeSend.DisplayD
                 .setPositiveButton("ok My Men, Ada data", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
+                        Intent intent = new Intent(BookScan.this,DialogLink.class);
+                        startActivity(intent);
                     }
                 });
         AlertDialog dialog = builder.create();
