@@ -123,6 +123,10 @@ public class BookScan extends AppCompatActivity implements DataToBeSend.DisplayD
                     case FirebaseVisionBarcode.TYPE_TEXT:
                     {
                         createDialog(item.getRawValue());
+                        Intent passData = new Intent(BookScan.this,BorrowingProcess.class);
+                        passData.putExtra("Book",item.getRawValue());
+                        startActivity(passData);
+                        finish();
                     }
                     break;
                     case FirebaseVisionBarcode.TYPE_URL:
@@ -160,8 +164,8 @@ public class BookScan extends AppCompatActivity implements DataToBeSend.DisplayD
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        Intent intent = new Intent(BookScan.this,DialogLink.class);
-                        startActivity(intent);
+                        //Intent intent = new Intent(BookScan.this,BorrowingProcess.class); startActivity(intent);
+
                     }
                 });
         AlertDialog dialog = builder.create();

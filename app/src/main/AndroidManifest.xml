@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ConfirmDetail2"></activity>
+        <activity android:name=".frbsDemo"></activity>
+        <activity android:name=".ConfirmDetail2" />
         <activity android:name=".ConfirmDetail" />
         <activity android:name=".DialogLink" />
 
@@ -20,15 +21,15 @@
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
             android:value="barcode" />
 
-        <activity android:name=".Menu" />
+        <activity android:name=".BookScan" />
         <activity android:name=".Dialog1" />
         <activity android:name=".About" />
-        <activity android:name=".frbsDemo" />
+        <activity android:name=".BorrowingProcess" />
         <activity android:name=".Register" />
         <activity android:name=".Logout" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".BookScan"> <!-- First page -->
+        <activity android:name=".Menu"> <!-- First page -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -67,7 +67,7 @@ public class Login extends AppCompatActivity {
                             if (!task.isSuccessful()) {
                                 Toast.makeText(Login.this, "Login Incorrect", Toast.LENGTH_SHORT).show();
                             } else {
-                                Intent intToMenu = new Intent(Login.this, Logout.class);
+                                Intent intToMenu = new Intent(Login.this, BookScan.class);
                                 startActivity(intToMenu);
                             }
                         }
