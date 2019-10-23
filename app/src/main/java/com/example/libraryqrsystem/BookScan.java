@@ -132,8 +132,8 @@ public class BookScan extends AppCompatActivity implements DataToBeSend.DisplayD
                     case FirebaseVisionBarcode.TYPE_URL:
                     {
                         //START browser intent
-                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(item.getRawValue()));
-                        startActivity(intent);
+                        Intent OpenURL = new Intent(Intent.ACTION_VIEW, Uri.parse(item.getRawValue()));
+                        startActivity(OpenURL);
                     }
                     break;
                     case FirebaseVisionBarcode.TYPE_CONTACT_INFO:

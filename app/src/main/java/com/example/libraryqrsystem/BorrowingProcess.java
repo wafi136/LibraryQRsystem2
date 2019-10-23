@@ -26,13 +26,21 @@ public class BorrowingProcess extends AppCompatActivity {
 
 
         txtname= (EditText)findViewById(R.id.txtName);
-        txtbookname = (EditText)findViewById(R.id.txtBook);
+
+        txtbookname = (EditText)findViewById(R.id.txtBook);//Dari QR scanned
+        //Intent from BookScan
+        Bundle QRdata = getIntent().getExtras();
+        String QRdataShow = QRdata.getString("Book");
+        txtbookname.setText(String.valueOf(QRdataShow));
+
         btnConfirm = (Button) findViewById(R.id.btnConfirm);
         borrower = new Member();
         firebaseDB = FirebaseDatabase.getInstance().getReference().child("BookBorrowed by:");
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (txtname.getText().toString().length()==0)
+                    txtname.setError("Name required to complete the process");
                 borrower.setName(txtname.getText().toString().trim());
                 borrower.setBookName(txtbookname.getText().toString().trim());
                 firebaseDB.push().setValue(borrower);
