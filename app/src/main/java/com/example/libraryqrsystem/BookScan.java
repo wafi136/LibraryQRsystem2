@@ -40,8 +40,8 @@ public class BookScan extends AppCompatActivity {
     boolean Shown = false;
     Button PressAgain;
 
-    FirebaseVisionBarcodeDetectorOptions options;
-    FirebaseVisionBarcodeDetector detector;
+    FirebaseVisionBarcodeDetectorOptions recourse;
+    FirebaseVisionBarcodeDetector checker;
 
 
     @Override
@@ -84,16 +84,16 @@ public class BookScan extends AppCompatActivity {
             }
         });
 
-        options = new FirebaseVisionBarcodeDetectorOptions.Builder()
+        recourse = new FirebaseVisionBarcodeDetectorOptions.Builder()
                 .setBarcodeFormats(FirebaseVisionBarcode.FORMAT_QR_CODE)
                 .build();
-        detector = FirebaseVision.getInstance().getVisionBarcodeDetector(options);
+        checker = FirebaseVision.getInstance().getVisionBarcodeDetector(recourse);
     }
 
     private void processImage(FirebaseVisionImage image) {
         if(!Shown)
         {
-            detector.detectInImage(image)
+            checker.detectInImage(image)
                     .addOnSuccessListener(new OnSuccessListener<List<FirebaseVisionBarcode>>() {
                         @Override
                         public void onSuccess(List<FirebaseVisionBarcode> firebaseVisionBarcodes) {
@@ -157,12 +157,12 @@ public class BookScan extends AppCompatActivity {
         dialog.show();
     }
 
-    private FirebaseVisionImage getVisionImageFromFrame(Frame frame) {
-        byte[] data = frame.getData();
+    private FirebaseVisionImage getVisionImageFromFrame(Frame frameProperty) {
+        byte[] data = frameProperty.getData();
         FirebaseVisionImageMetadata metadata = new FirebaseVisionImageMetadata.Builder()
                 .setFormat(FirebaseVisionImageMetadata.IMAGE_FORMAT_NV21)
-                .setHeight(frame.getSize().getHeight())
-                .setWidth(frame.getSize().getWidth())
+                .setHeight(frameProperty.getSize().getHeight())
+                .setWidth(frameProperty.getSize().getWidth())
                 .build();
         return FirebaseVisionImage.fromByteArray(data,metadata);
 

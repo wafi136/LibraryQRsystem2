@@ -50,9 +50,7 @@ public class Menu extends AppCompatActivity {
                                 startActivity(intent2);
                                 break;
                             case 2:
-                                //Toast.makeText(Menu.this,"Click this "+ arrayIcon[Visit],Toast.LENGTH_SHORT).show();
-                                //Intent intent3 = new Intent(Menu.this,BookScan.class);
-                                //startActivity(intent3);
+
                                 System.exit(0);
                                 break;
 
