@@ -16,7 +16,8 @@
             android:id="@+id/cameraView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            />
+            android:layout_alignStart="@+id/null"
+            android:layout_alignTop="@+id/null" />
 
         <View
             android:layout_gravity="center"

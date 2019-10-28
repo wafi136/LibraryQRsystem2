@@ -35,8 +35,7 @@ import com.otaliastudios.cameraview.frame.FrameProcessor;
 
 import java.util.List;
 
-public class BookScan extends AppCompatActivity implements DataToBeSend.DisplayData{  // implements DataToBeSend.DisplayData
-
+public class BookScan extends AppCompatActivity {
     CameraView cameraView;
     boolean isDetected = false;
     Button btn_start_again;
@@ -104,7 +103,7 @@ public class BookScan extends AppCompatActivity implements DataToBeSend.DisplayD
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(BookScan.this,"Ida mau"+e.getMessage(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(BookScan.this,"Do not Work"+e.getMessage(),Toast.LENGTH_SHORT).show();
                         }
                     });
         }
@@ -121,7 +120,7 @@ public class BookScan extends AppCompatActivity implements DataToBeSend.DisplayD
                 switch (value_type)
                 {
                     case FirebaseVisionBarcode.TYPE_TEXT:
-                    {
+                    {   //Data to be send to next activity
                         createDialog(item.getRawValue());
                         Intent passData = new Intent(BookScan.this,BorrowingProcess.class);
                         passData.putExtra("Book",item.getRawValue());
@@ -132,24 +131,11 @@ public class BookScan extends AppCompatActivity implements DataToBeSend.DisplayD
                     case FirebaseVisionBarcode.TYPE_URL:
                     {
                         //START browser intent
-                        Intent OpenURL = new Intent(Intent.ACTION_VIEW, Uri.parse(item.getRawValue()));
-                        startActivity(OpenURL);
+                        Intent VisitWeb = new Intent(Intent.ACTION_VIEW, Uri.parse(item.getRawValue()));
+                        startActivity(VisitWeb);
                     }
                     break;
-                    case FirebaseVisionBarcode.TYPE_CONTACT_INFO:
-                    {
-                        String info = new StringBuilder("Name:  ")
-                                .append(item.getContactInfo().getName().getFormattedName())
-                                .append("\n")
-                                .append("Address:  ")
-                                .append(item.getContactInfo().getAddresses().get(0).getAddressLines()[0])
-                                .append("\n")
-                                .append("Email: ")
-                                .append(item.getContactInfo().getEmails().get(0).getAddress())
-                                .toString();
-                        createDialog(info);
-                    }
-                    break;
+
                     default:
                         break;
                 }
@@ -164,7 +150,7 @@ public class BookScan extends AppCompatActivity implements DataToBeSend.DisplayD
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        //Intent intent = new Intent(BookScan.this,BorrowingProcess.class); startActivity(intent);
+
 
                     }
                 });
@@ -188,8 +174,5 @@ public class BookScan extends AppCompatActivity implements DataToBeSend.DisplayD
     }
 
 
-    @Override
-    public void applyTexts(String username, String password) {
 
-    }
 }
