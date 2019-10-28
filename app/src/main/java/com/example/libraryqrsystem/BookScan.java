@@ -36,9 +36,9 @@ import com.otaliastudios.cameraview.frame.FrameProcessor;
 import java.util.List;
 
 public class BookScan extends AppCompatActivity {
-    CameraView cameraView;
-    boolean isDetected = false;
-    Button btn_start_again;
+    CameraView cameraEye;
+    boolean Shown = false;
+    Button PressAgain;
 
     FirebaseVisionBarcodeDetectorOptions options;
     FirebaseVisionBarcodeDetector detector;
@@ -65,19 +65,19 @@ public class BookScan extends AppCompatActivity {
     }
 
     private void setupCamera() {
-        btn_start_again = (Button)findViewById(R.id.btn_again);
-        btn_start_again.setEnabled(isDetected);
-        btn_start_again.setOnClickListener(new View.OnClickListener() {
+        PressAgain = (Button)findViewById(R.id.btn_redo);
+        PressAgain.setEnabled(Shown);
+        PressAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                isDetected = !isDetected;
-                btn_start_again.setEnabled(isDetected);
+                Shown = !Shown;
+                PressAgain.setEnabled(Shown);
             }
         });
 
-        cameraView = (CameraView)findViewById(R.id.cameraView);
-        cameraView.setLifecycleOwner(this);
-        cameraView.addFrameProcessor(new FrameProcessor() {
+        cameraEye = (CameraView)findViewById(R.id.cameraView);
+        cameraEye.setLifecycleOwner(this);
+        cameraEye.addFrameProcessor(new FrameProcessor() {
             @Override
             public void process(@NonNull Frame frame) {
                 processImage(getVisionImageFromFrame(frame));
@@ -91,7 +91,7 @@ public class BookScan extends AppCompatActivity {
     }
 
     private void processImage(FirebaseVisionImage image) {
-        if(!isDetected)
+        if(!Shown)
         {
             detector.detectInImage(image)
                     .addOnSuccessListener(new OnSuccessListener<List<FirebaseVisionBarcode>>() {
@@ -103,7 +103,7 @@ public class BookScan extends AppCompatActivity {
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(BookScan.this,"Do not Work"+e.getMessage(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(BookScan.this,"Ida mau"+e.getMessage(),Toast.LENGTH_SHORT).show();
                         }
                     });
         }
@@ -112,8 +112,8 @@ public class BookScan extends AppCompatActivity {
     private void processResult(List<FirebaseVisionBarcode> firebaseVisionBarcodes) {
         if(firebaseVisionBarcodes.size()>0)
         {
-            isDetected = true;
-            btn_start_again.setEnabled(isDetected);
+            Shown = true;
+            PressAgain.setEnabled(Shown);
             for(FirebaseVisionBarcode item: firebaseVisionBarcodes)
             {
                 int value_type = item.getValueType();
@@ -131,11 +131,10 @@ public class BookScan extends AppCompatActivity {
                     case FirebaseVisionBarcode.TYPE_URL:
                     {
                         //START browser intent
-                        Intent VisitWeb = new Intent(Intent.ACTION_VIEW, Uri.parse(item.getRawValue()));
-                        startActivity(VisitWeb);
+                        Intent Website = new Intent(Intent.ACTION_VIEW, Uri.parse(item.getRawValue()));
+                        startActivity(Website);
                     }
                     break;
-
                     default:
                         break;
                 }

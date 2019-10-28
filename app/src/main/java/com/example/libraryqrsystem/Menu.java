@@ -17,7 +17,7 @@ import com.hitomi.cmlibrary.OnMenuStatusChangeListener;
 public class Menu extends AppCompatActivity {
 
      String arrayIcon[]  =
-                {"Login","Register", "About"};
+                {"Login","Register", "Nothing"};
 
 
 
@@ -30,9 +30,9 @@ public class Menu extends AppCompatActivity {
 
 
         circleMenu.setMainMenu(Color.parseColor("#D3D3D3"),R.drawable.ic_add,R.drawable.ic_clear)
-                .addSubMenu(Color.parseColor("#ffffff"),R.drawable.bleach)
-                .addSubMenu(Color.parseColor("#4169E1"),R.drawable.facebook_icons8)
-                .addSubMenu(Color.parseColor("#32CD32"),R.drawable.whatsapp_icons8)
+                .addSubMenu(Color.parseColor("#ffffff"),R.drawable.login_icn)
+                .addSubMenu(Color.parseColor("#4169E1"),R.drawable.register_icn)
+                .addSubMenu(Color.parseColor("#32CD32"),R.drawable.exit_icn)
 
 
                 .setOnMenuSelectedListener(new OnMenuSelectedListener() {
@@ -50,9 +50,10 @@ public class Menu extends AppCompatActivity {
                                 startActivity(intent2);
                                 break;
                             case 2:
-                                Toast.makeText(Menu.this,"Click this "+ arrayIcon[Visit],Toast.LENGTH_SHORT).show();
-                                Intent intent3 = new Intent(Menu.this,BookScan.class);
-                                startActivity(intent3);
+                                //Toast.makeText(Menu.this,"Click this "+ arrayIcon[Visit],Toast.LENGTH_SHORT).show();
+                                //Intent intent3 = new Intent(Menu.this,BookScan.class);
+                                //startActivity(intent3);
+                                System.exit(0);
                                 break;
 
                             default:

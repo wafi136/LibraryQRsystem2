@@ -29,7 +29,8 @@ public class BorrowingProcess extends AppCompatActivity {
 
         txtname= (EditText)findViewById(R.id.txtName);
 
-        txtbookname = (EditText)findViewById(R.id.txtBook);//Dari QR scanned
+        txtbookname = (EditText)findViewById(R.id.txtBook);
+        //From QR scanned
         //Intent from BookScan
         Bundle QRdata = getIntent().getExtras();
         String QRdataShow = QRdata.getString("Book");

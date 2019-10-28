@@ -18,10 +18,8 @@
             android:value="barcode" />
 
         <activity android:name=".BookScan" />
-        <activity android:name=".About" />
         <activity android:name=".BorrowingProcess" />
         <activity android:name=".Register" />
-        <activity android:name=".Logout" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Menu"> <!-- First page -->

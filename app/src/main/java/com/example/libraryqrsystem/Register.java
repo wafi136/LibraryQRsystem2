@@ -54,7 +54,7 @@ public class Register extends AppCompatActivity {
                             if (!task.isSuccessful()) {
                                 Toast.makeText(Register.this, " SignUp Unsuccessful", Toast.LENGTH_SHORT).show();
                             } else {
-                                startActivity(new Intent(Register.this, Logout.class));
+                                startActivity(new Intent(Register.this, BookScan.class));
                             }
                         }
                     });

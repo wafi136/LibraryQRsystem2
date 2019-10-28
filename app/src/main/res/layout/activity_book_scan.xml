@@ -16,8 +16,8 @@
             android:id="@+id/cameraView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignStart="@+id/null"
-            android:layout_alignTop="@+id/null" />
+            android:layout_alignStart="@+id/start"
+            android:layout_alignTop="@+id/top" />
 
         <View
             android:layout_gravity="center"
@@ -37,7 +37,7 @@
         >
 
         <Button
-            android:id="@+id/btn_again"
+            android:id="@+id/btn_redo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:enabled="false"
